@@ -70,12 +70,12 @@ def get_local_configuration(environment: str) -> dict:
         DEV: {
             ACCOUNT_ID: '954898027504',
             REGION: 'us-east-1',
-            VPC_CIDR: '10.10.0.0/24'
+            VPC_CIDR: '10.20.0.0/24'
         },
         PROD: {
             ACCOUNT_ID: '180221971032',
             REGION: 'us-east-1',
-            VPC_CIDR: '10.0.0.0/24'
+            VPC_CIDR: '10.10.0.0/24'
         }
     }
 
