@@ -9,7 +9,7 @@ import aws_cdk.core as cdk
 from lib.pipeline_stack import PipelineStack
 from lib.empty_stack import EmptyStack
 from lib.configuration import (
-    ACCOUNT_ID, DEPLOYMENT, DEV, TEST, PROD, REGION,
+    ACCOUNT_ID, DEPLOYMENT, DEV, PROD, REGION,
     get_logical_id_prefix, get_all_configurations
 )
 from lib.tagging import tag
@@ -41,29 +41,11 @@ else:
             app,
             f'{target_environment}{logical_id_prefix}InfrastructurePipeline',
             target_environment=DEV,
-            target_branch='cdk_testing',
+            target_branch='dev',
             target_aws_env=dev_aws_env,
             env=deployment_aws_env,
         )
         tag(dev_pipeline_stack, DEPLOYMENT)
-
-    if os.environ.get('ENV', TEST) == TEST:
-        target_environment = TEST
-        test_account = raw_mappings[TEST][ACCOUNT_ID]
-        test_region = raw_mappings[TEST][REGION]
-        test_aws_env = {
-            'account': test_account,
-            'region': test_region,
-        }
-        test_pipeline_stack = PipelineStack(
-            app,
-            f'{target_environment}{logical_id_prefix}InfrastructurePipeline',
-            target_environment=TEST,
-            target_branch='test',
-            target_aws_env=test_aws_env,
-            env=deployment_aws_env,
-        )
-        tag(test_pipeline_stack, DEPLOYMENT)
 
     if os.environ.get('ENV', PROD) == PROD:
         target_environment = PROD
@@ -77,7 +59,7 @@ else:
             app,
             f'{target_environment}{logical_id_prefix}InfrastructurePipeline',
             target_environment=PROD,
-            target_branch='production',
+            target_branch='prod',
             target_aws_env=prod_aws_env,
             env=deployment_aws_env,
         )
