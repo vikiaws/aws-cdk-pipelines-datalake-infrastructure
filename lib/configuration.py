@@ -16,8 +16,8 @@ GITHUB_REPOSITORY_OWNER_NAME = 'vikiaws'
 GITHUB_REPOSITORY_NAME = 'aws-cdk-pipelines-datalake-infrastructure'
 ACCOUNT_ID = '019468584915'
 REGION = 'us-east-1'
-LOGICAL_ID_PREFIX = 'DataLakeCdknew'
-RESOURCE_NAME_PREFIX = 'data-lake-cdk-new'
+LOGICAL_ID_PREFIX = 'DataLakeCdkTest'
+RESOURCE_NAME_PREFIX = 'data-lake-cdk-test'
 VPC_CIDR = '10.0.0.0/16'
 
 # Secrets Manager Inputs
