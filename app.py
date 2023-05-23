@@ -28,7 +28,7 @@ else:
         'region': deployment_region,
     }
     logical_id_prefix = get_logical_id_prefix()
-    
+
     if os.environ.get('ENV', DEV) == DEV:
         target_environment = DEV
         dev_account = raw_mappings[DEV][ACCOUNT_ID]
@@ -46,7 +46,7 @@ else:
             env=deployment_aws_env,
         )
         tag(dev_pipeline_stack, DEPLOYMENT)
-
+    
     if os.environ.get('ENV', PROD) == PROD:
         target_environment = PROD
         prod_account = raw_mappings[PROD][ACCOUNT_ID]
