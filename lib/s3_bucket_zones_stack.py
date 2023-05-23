@@ -36,7 +36,7 @@ class S3BucketZonesStack(cdk.Stack):
         logical_id_prefix = get_logical_id_prefix()
         resource_name_prefix = get_resource_name_prefix()
         self.removal_policy = cdk.RemovalPolicy.DESTROY
-        if target_environment == PROD:
+        if  target_environment == PROD:
             self.removal_policy = cdk.RemovalPolicy.RETAIN
 
         s3_kms_key = self.create_kms_key(
@@ -200,7 +200,7 @@ class S3BucketZonesStack(cdk.Stack):
             )
         ]
         # Prevents user deletion of buckets
-        if self.target_environment == PROD:
+        if self.target_environment == PROD: 
             policy_document_statements.append(
                 iam.PolicyStatement(
                     sid='BlockUserDeletionOfBucket',
