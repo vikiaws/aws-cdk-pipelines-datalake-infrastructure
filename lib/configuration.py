@@ -134,7 +134,7 @@ def get_all_configurations() -> dict:
     return {
         DEPLOYMENT: {
             ENVIRONMENT: DEPLOYMENT,
-            GITHUB_TOKEN: '/DataLake1/GitHubToken',
+            GITHUB_TOKEN: '/DataLakenew/GitHubToken',
             **get_local_configuration(DEPLOYMENT),
         }, 
         DEV: get_environment_configuration(DEV),       
