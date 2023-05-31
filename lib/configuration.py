@@ -14,7 +14,7 @@ ENVIRONMENT = 'environment'
 # Manual Inputs
 GITHUB_REPOSITORY_OWNER_NAME = 'vikiaws'
 GITHUB_REPOSITORY_NAME = 'aws-cdk-pipelines-datalake-infrastructure'
-ACCOUNT_ID = '967887801084'
+ACCOUNT_ID = '019468584915'
 REGION = 'us-east-1'
 LOGICAL_ID_PREFIX = 'DataLakeVikiNew'
 RESOURCE_NAME_PREFIX = 'data-lake-viki-new'
@@ -53,7 +53,7 @@ def get_local_configuration(environment: str) -> dict:
     """
     local_mapping = {
         DEPLOYMENT: {
-            ACCOUNT_ID: '967887801084',
+            ACCOUNT_ID: '019468584915',
             REGION: 'us-east-1',
             GITHUB_REPOSITORY_OWNER_NAME: 'vikiaws',
             # If you use GitHub / GitHub Enterprise, this will be the organization name
@@ -68,12 +68,12 @@ def get_local_configuration(environment: str) -> dict:
             RESOURCE_NAME_PREFIX: 'data-lake-viki-new',     
         },
         DEV: {
-            ACCOUNT_ID: '373755588988',
+            ACCOUNT_ID: '954898027504',
             REGION: 'us-east-1',
             VPC_CIDR: '10.20.0.0/24'
         },
         PROD: {
-            ACCOUNT_ID: '408574949687',
+            ACCOUNT_ID: '180221971032',
             REGION: 'us-east-1',
             VPC_CIDR: '10.20.0.0/24'
         }
